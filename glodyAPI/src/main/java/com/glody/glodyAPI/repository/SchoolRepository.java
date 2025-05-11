@@ -16,4 +16,6 @@ public interface SchoolRepository extends JpaRepository<School, Long> {
 	List<School> findByRankingRange(int minRank, int maxRank);
 
 	List<School> findByNameContainingIgnoreCase(String name);
+
+	List<School> findByCountryIgnoreCase(String country);
 }

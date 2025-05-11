@@ -1,43 +1,25 @@
 package com.glody.glodyAPI.service;
 
 import java.util.List;
-import java.util.Optional;
-
-import org.springframework.stereotype.Service;
 
 import com.glody.glodyAPI.model.User;
-import com.glody.glodyAPI.repository.UserRepository;
 
-@Service
-public class UserService {
+public interface UserService {
+	User createUser(User user);
 
-	private final UserRepository userRepository;
+	User getUserById(Long id);
 
-	public UserService(UserRepository userRepository) {
-		this.userRepository = userRepository;
-	}
+	User getUserByEmail(String email);
 
-	public List<User> getAllUsers() {
-		return userRepository.findAll();
-	}
+	List<User> getAllUsers();
 
-	public Optional<User> getUserById(Long id) {
-		return userRepository.findById(id);
-	}
+	List<User> getUsersByRole(String roleName);
 
-	public User createUser(User user) {
-		return userRepository.save(user);
-	}
+	User updateUser(Long id, User userDetails);
 
-	public void deleteUser(Long id) {
-		userRepository.deleteById(id);
-	}
+	void deleteUser(Long id);
 
-	public User updateUser(Long id, User updatedUser) {
-		return userRepository.findById(id).map(user -> {
-			user.setName(updatedUser.getName());
-			user.setEmail(updatedUser.getEmail());
-			return userRepository.save(user);
-		}).orElseThrow(() -> new RuntimeException("User not found"));
-	}
+	User changeSubscriptionTier(Long userId, String tier);
+
+	User updateAccountStatus(Long userId, String status);
 }

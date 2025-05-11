@@ -75,6 +75,15 @@ public class Program {
 	private List<CommunityPost> taggedPosts;
 
 	public enum DegreeLevel {
-		BACHELOR, MASTER, PHD, DIPLOMA, LANGUAGE
+		BACHELOR, MASTER, PHD, DIPLOMA, LANGUAGE;
+
+		public static DegreeLevel fromString(String str) {
+			try {
+				return DegreeLevel.valueOf(str.toUpperCase());
+			} catch (Exception e) {
+				return null;
+			}
+		}
 	}
+
 }

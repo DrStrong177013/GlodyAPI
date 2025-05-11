@@ -99,4 +99,5 @@ public class User {
 	public enum SubscriptionTier {
 		FREE, BASIC, PREMIUM
 	}
+
 }
