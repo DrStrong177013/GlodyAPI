@@ -11,9 +11,9 @@ import com.glody.glodyAPI.model.CommunityPost;
 public interface CommunityPostRepository extends JpaRepository<CommunityPost, Long> {
 	List<CommunityPost> findByPostType(CommunityPost.PostType type);
 
-	List<CommunityPost> findBySchoolTag_Id(Long schoolId);
+	List<CommunityPost> findBySchoolTag_SchoolId(Long schoolId);
 
-	List<CommunityPost> findByAuthor_IdOrderByCreatedAtDesc(Long userId);
+	List<CommunityPost> findByAuthor_UserIdOrderByCreatedAtDesc(Long userId);
 
 	List<CommunityPost> findByIsFeaturedTrue();
 }

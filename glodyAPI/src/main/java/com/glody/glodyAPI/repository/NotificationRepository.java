@@ -9,9 +9,9 @@ import com.glody.glodyAPI.model.Notification;
 
 @Repository
 public interface NotificationRepository extends JpaRepository<Notification, Long> {
-	List<Notification> findByRecipient_Id(Long userId);
+	List<Notification> findByRecipient_UserId(Long userId);
 
-	List<Notification> findByRecipient_IdAndIsReadFalse(Long userId);
+	List<Notification> findByRecipient_UserIdAndIsReadFalse(Long userId);
 
 	List<Notification> findByTypeAndRelatedEntityType(Notification.NotificationType type, String entityType);
 }

@@ -68,7 +68,11 @@ public class Program {
 	private Set<Application> applications;
 
 	@ManyToMany
-	@JoinTable(name = "ProgramScholarships", joinColumns = @JoinColumn(name = "program_id"), inverseJoinColumns = @JoinColumn(name = "scholarship_id"))
+	@JoinTable(
+			name = "program_scholarships",
+			joinColumns = @JoinColumn(name = "program_id"),
+			inverseJoinColumns = @JoinColumn(name = "scholarship_id")
+	)
 	private Set<Scholarship> scholarships;
 
 	@OneToMany(mappedBy = "programTag")

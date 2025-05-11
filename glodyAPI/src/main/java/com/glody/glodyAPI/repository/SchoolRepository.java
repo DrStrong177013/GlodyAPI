@@ -10,12 +10,13 @@ import com.glody.glodyAPI.model.School;
 
 @Repository
 public interface SchoolRepository extends JpaRepository<School, Long> {
-	List<School> findByCountry(String country);
 
-	@Query("SELECT s FROM School s WHERE s.qsRanking BETWEEN :minRank AND :maxRank")
-	List<School> findByRankingRange(int minRank, int maxRank);
+	// Search by country, case-insensitive
+	List<School> findByCountryIgnoreCase(String country);
 
+	// Search by name containing keyword, case-insensitive
 	List<School> findByNameContainingIgnoreCase(String name);
 
-	List<School> findByCountryIgnoreCase(String country);
+	// Search by QS ranking within a range
+	List<School> findByQsRankingBetween(Integer minRank, Integer maxRank);
 }

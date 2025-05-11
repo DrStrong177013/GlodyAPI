@@ -9,9 +9,9 @@ import com.glody.glodyAPI.model.UserPartnerConnection;
 
 @Repository
 public interface UserPartnerConnectionRepository extends JpaRepository<UserPartnerConnection, Long> {
-	List<UserPartnerConnection> findByUser_Id(Long userId);
+	List<UserPartnerConnection> findByUser_UserId(Long userId);
 
-	List<UserPartnerConnection> findByPartner_Id(Long partnerId);
+	List<UserPartnerConnection> findByPartner_PartnerId(Long partnerId);
 
 	List<UserPartnerConnection> findByStatus(UserPartnerConnection.ConnectionStatus status);
 }

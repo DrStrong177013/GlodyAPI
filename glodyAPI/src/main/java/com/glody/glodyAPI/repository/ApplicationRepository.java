@@ -9,9 +9,9 @@ import com.glody.glodyAPI.model.Application;
 
 @Repository
 public interface ApplicationRepository extends JpaRepository<Application, Long> {
-	List<Application> findByUser_Id(Long userId);
+	List<Application> findByUser_UserId(Long userId);
 
-	List<Application> findByProgram_School_Id(Long schoolId);
+	List<Application> findByProgram_School_SchoolId(Long schoolId);
 
 	List<Application> findByApplicationStatus(Application.ApplicationStatus status);
 }

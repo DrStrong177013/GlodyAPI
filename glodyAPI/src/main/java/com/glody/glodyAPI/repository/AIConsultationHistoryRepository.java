@@ -9,7 +9,7 @@ import com.glody.glodyAPI.model.AIConsultationHistory;
 
 @Repository
 public interface AIConsultationHistoryRepository extends JpaRepository<AIConsultationHistory, Long> {
-	List<AIConsultationHistory> findByUser_Id(Long userId);
+	List<AIConsultationHistory> findByUser_UserId(Long userId);
 
 	List<AIConsultationHistory> findByFeedbackScoreGreaterThanEqual(int minScore);
 }

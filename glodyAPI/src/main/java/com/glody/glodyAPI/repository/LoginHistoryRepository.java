@@ -9,7 +9,7 @@ import com.glody.glodyAPI.model.LoginHistory;
 
 @Repository
 public interface LoginHistoryRepository extends JpaRepository<LoginHistory, Long> {
-	List<LoginHistory> findByUser_Id(Long userId);
+	List<LoginHistory> findByUser_UserId(Long userId);
 
 	List<LoginHistory> findByIsSuccessfulAndLoginTimeAfter(boolean isSuccessful, java.util.Date date);
 

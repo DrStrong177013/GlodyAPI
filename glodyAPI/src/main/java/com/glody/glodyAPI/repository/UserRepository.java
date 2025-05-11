@@ -21,6 +21,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	List<User> findByAccountStatus(User.AccountStatus status);
 
 	// Thêm method mới
-	@Query("SELECT u FROM User u JOIN UserRoles ur ON u.userId = ur.userId WHERE ur.roleId = :roleId")
-	List<User> findByRoleId(Long roleId);
+//	@Query("SELECT u FROM User u JOIN UserRoles ur ON u.userId = ur.userId WHERE ur.roleId = :roleId")
+	List<User> findByRoles_RoleId(Long roleId);
 }

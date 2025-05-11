@@ -10,9 +10,9 @@ import com.glody.glodyAPI.model.Payment;
 
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
-	List<Payment> findByUser_Id(Long userId);
+	List<Payment> findByUser_UserId(Long userId);
 
 	List<Payment> findByStatusAndTransactionDateBetween(Payment.PaymentStatus status, Date startDate, Date endDate);
 
-	List<Payment> findByPartner_Id(Long partnerId);
+	List<Payment> findByPartner_PartnerId(Long partnerId);
 }

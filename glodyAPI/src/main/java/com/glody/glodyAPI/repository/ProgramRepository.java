@@ -18,8 +18,7 @@ public interface ProgramRepository extends JpaRepository<Program, Long> {
 	List<Program> findBySchool_Country(String country);
 
 	// Thêm method mới liên quan đến học bổng
-	@Query("SELECT p FROM Program p JOIN ProgramScholarships ps ON p.programId = ps.programId WHERE ps.scholarshipId = :scholarshipId")
-	List<Program> findByScholarshipId(Long scholarshipId);
+	List<Program> findByScholarships_ScholarshipId(Long scholarshipId);
 
 	List<Program> findByNameContainingOrFieldOfStudyContainingOrSchool_CountryOrDegreeLevel(String name,
 			String fieldOfStudy, String country, Program.DegreeLevel degreeLevel);

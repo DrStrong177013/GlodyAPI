@@ -61,7 +61,11 @@ public class Scholarship {
 	private Boolean isCompetitive = true;
 
 	@ManyToMany
-	@JoinTable(name = "program_scholarships", joinColumns = @JoinColumn(name = "scholarship_id"), inverseJoinColumns = @JoinColumn(name = "program_id"))
+	@JoinTable(
+			name = "program_scholarships",
+			joinColumns = @JoinColumn(name = "scholarship_id"),
+			inverseJoinColumns = @JoinColumn(name = "program_id")
+	)
 	private Set<Program> programs;
 
 	public enum CoverageType {

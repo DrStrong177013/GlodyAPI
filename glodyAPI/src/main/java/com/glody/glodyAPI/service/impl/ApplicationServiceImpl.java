@@ -45,7 +45,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
 	@Override
 	public List<Application> getApplicationsByUserId(Long userId) {
-		return applicationRepository.findByUser_Id(userId);
+		return applicationRepository.findByUser_UserId(userId);
 	}
 
 	@Override

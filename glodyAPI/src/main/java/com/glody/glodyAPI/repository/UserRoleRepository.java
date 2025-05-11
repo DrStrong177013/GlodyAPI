@@ -11,9 +11,7 @@ import com.glody.glodyAPI.model.User;
 
 @Repository
 public interface UserRoleRepository extends JpaRepository<User, Long> {
-	@Query("SELECT r FROM Role r JOIN UserRoles ur ON r.roleId = ur.roleId WHERE ur.userId = :userId")
 	List<Role> findRolesByUserId(Long userId);
 
-	@Query("SELECT u FROM User u JOIN UserRoles ur ON u.userId = ur.userId WHERE ur.roleId = :roleId")
-	List<User> findUsersByRoleId(Long roleId);
+	List<User> findUsersByRoles_RoleId(Long roleId);
 }

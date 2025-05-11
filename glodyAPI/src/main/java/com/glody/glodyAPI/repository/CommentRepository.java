@@ -9,9 +9,9 @@ import com.glody.glodyAPI.model.Comment;
 
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Long> {
-	List<Comment> findByPost_Id(Long postId);
+	List<Comment> findByPost_PostId(Long postId);
 
-	List<Comment> findByAuthor_Id(Long userId);
+	List<Comment> findByAuthor_UserId(Long userId);
 
-	List<Comment> findByIsVerifiedAnswerTrueAndPost_Id(Long postId);
+	List<Comment> findByIsVerifiedAnswerTrueAndPost_PostId(Long postId);
 }
